@@ -1,14 +1,15 @@
-import Navbar from "./components/Navbar";
-import "./App.css";
-import Caursel from "./components/Caursel";
-import Card from "./components/Card";
+import SinglePageProduct from "./components/SinglePageProduct";
+import { Route, Routes } from "react-router-dom";
+import Home from "./components/Routes/Home";
+import ProductInfo from "./components/Routes/ProductInfo";
 
 function App() {
   return (
     <div>
-      <Navbar />
-      <Caursel />
-      <Card />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/products/:id" element={<ProductInfo />} />
+      </Routes>
     </div>
   );
 }

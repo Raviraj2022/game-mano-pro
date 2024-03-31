@@ -22,7 +22,7 @@ const Card = () => {
   }, []);
   console.log(cardData.products);
   return (
-    <div className=" container  mt-5">
+    <div className=" container ">
       <div className="row mt-5">
         {cardData.products &&
           cardData.products.map((card, index) => (
@@ -36,8 +36,8 @@ const Card = () => {
                 />
                 <div className="card-body">
                   <h5 className="card-title">{card.title}</h5>
-                  <p className="card-text">{card.description}</p>
-                  <a href={card.link} className="btn btn-primary">
+                  <p className="card-text truncate">{card.description}</p>
+                  <a href={"/products/" + card.id} className="btn btn-primary">
                     view more...
                   </a>
                 </div>
