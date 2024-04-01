@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 
 const SinglePageProduct = () => {
   const [product, setProduct] = useState(null);
+  const [hoveredIndex, setHoveredIndex] = useState(null);
   const { id } = useParams();
   console.log("id", id);
   useEffect(() => {
@@ -21,6 +22,13 @@ const SinglePageProduct = () => {
 
     fetchProduct();
   }, [id]);
+  const handleMouseEnter = (index) => {
+    setHoveredIndex(index);
+  };
+
+  const handleMouseLeave = () => {
+    setHoveredIndex(null);
+  };
 
   if (!product) {
     return <div>Loading...</div>;
@@ -52,11 +60,19 @@ const SinglePageProduct = () => {
           <div className="row">
             {product.images.map((image, index) => (
               <div className="col-md-3" key={index}>
-                <img
-                  src={image}
-                  alt={`Image ${index + 1}`}
-                  className="img-fluid"
-                />
+                <div
+                  className={`image-container ${
+                    index === hoveredIndex ? "hovered" : ""
+                  }`}
+                  onMouseEnter={() => handleMouseEnter(index)}
+                  onMouseLeave={handleMouseLeave}
+                >
+                  <img
+                    src={image}
+                    alt={`Image ${index + 1}`}
+                    className="img-fluid"
+                  />
+                </div>
               </div>
             ))}
           </div>
