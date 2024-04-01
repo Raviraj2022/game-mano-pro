@@ -1,6 +1,6 @@
 import React from "react";
 // import p1 from "../images/phone"
-const Caursel = () => {
+const Carousel = () => {
   return (
     <div>
       <div id="carouselExampleCaptions" className="carousel slide">
@@ -28,7 +28,7 @@ const Caursel = () => {
         </div>
         <div className="carousel-inner">
           <div className="carousel-item active">
-            <img src="../images/phone" class="d-block w-100" alt="p1" />
+            <img src="../images/phone.jpg" class="d-block w-100" alt="p1" />
             <div className="carousel-caption d-none d-md-block">
               <h5>First slide label</h5>
               <p>
@@ -37,7 +37,7 @@ const Caursel = () => {
             </div>
           </div>
           <div className="carousel-item">
-            <img src="../images/phone1" class="d-block w-100" alt="p2" />
+            <img src="../images/phone1.jpg" class="d-block w-100" alt="p2" />
             <div className="carousel-caption d-none d-md-block">
               <h5>Second slide label</h5>
               <p>
@@ -46,7 +46,11 @@ const Caursel = () => {
             </div>
           </div>
           <div className="carousel-item">
-            <img src="../images/phone2" className="d-block w-100" alt="p3" />
+            <img
+              src="../images/phone2.jpg"
+              className="d-block w-100"
+              alt="p3"
+            />
             <div className="carousel-caption d-none d-md-block">
               <h5>Third slide label</h5>
               <p>
@@ -84,4 +88,4 @@ const Caursel = () => {
   );
 };
 
-export default Caursel;
+export default Carousel;
