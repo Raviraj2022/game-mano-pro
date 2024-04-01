@@ -3,10 +3,10 @@ import React from "react";
 const Navbar = () => {
   return (
     <div>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary ">
+      <nav className="navbar navbar-expand-lg bg-primary font-weight-bold fixed-top">
         <div className="container-fluid">
-          <a className="navbar-brand" href="#">
-            Navbar
+          <a className="navbar-brand" href="/">
+            Products
           </a>
           <div className="d-flex justify-content-end">
             <button
@@ -23,18 +23,13 @@ const Navbar = () => {
             <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                 <li className="nav-item">
-                  <a className="nav-link" aria-current="page" href="#">
+                  <a className="nav-link" aria-current="page" href="/">
                     Home
                   </a>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#">
-                    Link
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link" aria-disabled="true">
-                    Disabled
+                  <a className="nav-link" href="/productList">
+                    ProductList
                   </a>
                 </li>
               </ul>

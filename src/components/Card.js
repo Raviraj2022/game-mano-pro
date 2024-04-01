@@ -1,3 +1,4 @@
+import Aos from "aos";
 import React, { useEffect, useState } from "react";
 // import axios from "axios";
 const Card = () => {
@@ -49,60 +50,29 @@ const Card = () => {
     setSelectedCategory(category);
   };
 
-  // const handleSearchChange = (event) => {
-  //   setSearchQuery(event.target.value);
-  // };
-  // // console.log(cardData.products);
-  // let filteredProducts = [];
-  // if (
-  //   Array.isArray(cardData) &&
-  //   cardData.length > 0 &&
-  //   cardData.every((item) => typeof item === "array")
-  // ) {
-  //   filteredProducts = cardData.filter((products) => {
-  //     // console.log(filteredProducts);
-  //     if (!selectedCategory) return true; // If no category is selected, show all products
-  //     return products.category === selectedCategory; // Show products belonging to the selected category
-  //   });
-  // }
-  // console.log(cardData.products);
-
   let filteredProducts = cardData.products || []; // Default to all products if no filter is applied
 
   if (selectedCategory) {
     filteredProducts = filteredProducts.filter(
       (product) => product.category === selectedCategory
     );
+  } else {
+    <p>Data Not found..</p>;
   }
-  // const filteredProducts = cardData.filter((product) => {
-  //   // Filter by category if a category is selected
-  //   if (selectedCategory && product.category !== selectedCategory) {
-  //     return false;
-  //   }
-  //   // Filter by search query if it's provided
-  //   if (
-  //     searchQuery &&
-  //     !product.title.toLowerCase().includes(searchQuery.toLowerCase())
-  //   ) {
-  //     return false;
-  //   }
-  //   return true; // Include the product otherwise
-  // });
+  useEffect(() => {
+    Aos.init({
+      duration: 800,
+      easing: "ease-in-out",
+    });
+  }, []);
 
-  console.log(cardData);
+  // console.log(cardData);
   return (
-    <div className=" container ">
+    <div className=" container">
       <div className="row ">
         <div className="col-md-12 mb-4">
-          {/* <input
-            type="text"
-            placeholder="Search by category..."
-            className="form-control"
-            value={searchQuery}
-            onChange={handleSearchChange}
-          /> */}
           <select
-            className="form-select mt-2"
+            className="form-select mt-5 w-100%"
             value={selectedCategory}
             onChange={(e) => handleCategoryChange(e.target.value)}
           >
@@ -120,7 +90,7 @@ const Card = () => {
         {/* {cardData.products &&
           cardData.products.map((card, index) => ( */}
         {filteredProducts.map((card, index) => (
-          <div className="col-md-4 mt-5" key={index}>
+          <div className="col-md-4  mt-5" data-aos="fade-left" key={index}>
             <div className="card">
               <img
                 src={card.thumbnail}

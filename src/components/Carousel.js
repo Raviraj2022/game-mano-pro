@@ -1,9 +1,55 @@
 import React from "react";
-// import p1 from "../images/phone"
+import p1 from "../images/phone.jpg";
+import p2 from "../images/phone1.jpg";
+import p3 from "../images/phone2.jpg";
 const Carousel = () => {
   return (
     <div>
-      <div id="carouselExampleCaptions" className="carousel slide">
+      {/* <div
+        id="carouselExampleIndicators"
+        class="carousel slide"
+        data-ride="carousel"
+      >
+        <ol class="carousel-indicators">
+          <li
+            data-target="#carouselExampleIndicators"
+            data-slide-to="0"
+            class="active"
+          ></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img class="d-block w-100" src={p1} alt="First slide" />
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src={p2} alt="Second slide" />
+          </div>
+          <div class="carousel-item">
+            <img class="d-block w-100" src={p3} alt="Third slide" />
+          </div>
+        </div>
+        <a
+          class="carousel-control-prev"
+          href="#carouselExampleIndicators"
+          role="button"
+          data-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a
+          class="carousel-control-next"
+          href="#carouselExampleIndicators"
+          role="button"
+          data-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div> */}
+      <div id="carouselExampleCaptions" className="carousel slide p-5 mt-5">
         <div className="carousel-indicators">
           <button
             type="button"
@@ -27,8 +73,8 @@ const Carousel = () => {
           ></button>
         </div>
         <div className="carousel-inner">
-          <div className="carousel-item active">
-            <img src="../images/phone.jpg" class="d-block w-100" alt="p1" />
+          <div className="carousel-item active mt-7">
+            <img src={p1} class="d-block w-100 h-50" alt="p1" />
             <div className="carousel-caption d-none d-md-block">
               <h5>First slide label</h5>
               <p>
@@ -37,7 +83,7 @@ const Carousel = () => {
             </div>
           </div>
           <div className="carousel-item">
-            <img src="../images/phone1.jpg" class="d-block w-100" alt="p2" />
+            <img src={p2} class="d-block w-100 h-50" alt="p2" />
             <div className="carousel-caption d-none d-md-block">
               <h5>Second slide label</h5>
               <p>
@@ -46,11 +92,7 @@ const Carousel = () => {
             </div>
           </div>
           <div className="carousel-item">
-            <img
-              src="../images/phone2.jpg"
-              className="d-block w-100"
-              alt="p3"
-            />
+            <img src={p3} className="d-block w-100 h-50" alt="p3" />
             <div className="carousel-caption d-none d-md-block">
               <h5>Third slide label</h5>
               <p>
