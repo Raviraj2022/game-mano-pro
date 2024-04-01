@@ -1,19 +1,18 @@
 import React from "react";
 import Navbar from "../Navbar";
-// import Caursel from "../Caursel";
+import Text from "../Text";
 import Card from "../Card";
 import Footer from "../Footer";
-import Carousel from "../Carousel";
 
-const Home = () => {
+const ProductList = () => {
   return (
-    <div className="bg-gradient-secondary text-white">
+    <div>
       <Navbar />
-      <Carousel />
+      <Text />
       <Card />
       <Footer />
     </div>
   );
 };
 
-export default Home;
+export default ProductList;
